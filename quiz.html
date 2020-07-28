@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="travel webpage unknown destinations">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take a Quiz!</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--begin wrapper-->
+  <div id="wrapper">
+
+
+    <!--begin banner-->
+    <header role="banner">
+
+      <!--begin nav-->
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!--end nav-->
+
+      <div id="header">
+        <h1>Take a Quiz!</h1>
+      </div>
+    </header>
+    <!--end header-->
+
+
+    <!-- begin intro -->
+    <div class="intro">
+      <p>Drag image that seems most appealing to you into the blue box below to reveal your ideal travel destination!</p>
+    </div>
+    <!--end intro-->
+
+    <div id="quiz">
+
+      <section ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+        ondragover="return dragOver(event)">
+        <img src="images/iceland.jpg" alt="Iceland.">
+        <img src="images/korea.jpg" alt="South Korea.">
+        <img src="images/bali.jpg" alt="Bali.">
+        <img src="images/malaysia.jpg" alt="Malaysia.">
+      </section>
+
+      <div id="dropBox" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)"
+        ondragover="return dragOver(event)"></div>
+
+    </div>
+
+
+
+
+
+  </div>
+  <!--end wrapper-->
+
+  <!--begin footer-->
+  <footer role="contentinfo">
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Destinations</a> |
+      <a href="#">Contact</a> |
+    </p>
+
+    <small>&copy; Copyright Petra Stefanec.</small>
+  </footer>
+  <!--end footer-->
+
+  <script>
+
+    var drop = document.getElementById('dropBox');
+    dropBox.ondrop = function (event) {
+      const currentData = event.dataTransfer.getData('Text');
+      let result = "";
+      if (currentData.includes("Iceland")){
+        result = "You are a nature lover. For some healing away from the crowds you should discover the natural beauty of "
+      } else if (currentData.includes("Korea")) {
+        result = "You love modern architecture and getting lost exploring new cities. You should wander through the streets of Seoul in "
+      } else if (currentData.includes("Bali")) {
+        result = "You are tired of everything and just want to lie down on warm sand and listen to the sound of the waves. You should relax on a beach in "
+      } else if (currentData.includes("Malaysia")) {
+        result = "You want to discover new places that are completely different from your backyard and participate in the local culture. You should backpack through "
+      }
+      
+      this.innerHTML = '<p> ' + result + ' ' + event.dataTransfer.getData('Text') + '</p>';
+      event.cancelBubble = true;
+      return false;
+    }
+
+    drop.ondragover = function () { return false; };
+
+    function cancelEvent() { return false; }
+    drop.ondragenter = cancelEvent;
+    drop.ondragover = cancelEvent;
+
+    var imgs = document.getElementsByTagName("img"), i = imgs.length;
+
+    while (i--) {
+      imgs[i].ondragstart = function (event) {
+        event = event || window.event;
+        event.dataTransfer.setData('Text', this.getAttribute('alt'));
+      }
+
+    }
+
+    function dragStart(ev) {
+
+      ev.dataTransfer.effectAllowed = 'move';
+      ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+      ev.dataTransfer.setDragImage(ev.target, 100, 100);
+      return true;
+
+    }
+
+    function dragEnter(ev) {
+      ev.preventDefault();
+      return true;
+    }
+
+    function dragOver(ev) {
+      ev.preventDefault();
+    }
+
+    function dragDrop(ev) {
+      var data = ev.dataTransfer.getData("Text"); ev.target.appendChild(document.getElementById(data));
+      ev.stopPropagation();
+      return false;
+    }
+
+  </script>
+
+</body>
+
+</html>

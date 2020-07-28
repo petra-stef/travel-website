@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="travel webpage unknown destinations">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unknown Places</title>
+  <link rel="stylesheet" href="destinations.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
+
+  <script src="dist/html5shiv.js"></script>
+  <script src="geolocation.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
+  </script>
+
+</head>
+
+<body>
+
+  <!--begin wrapper-->
+  <div id="wrapper">
+
+
+    <!--begin banner-->
+    <header role="banner">
+
+      <!--begin nav-->
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!--end nav-->
+
+      <div id="header">
+        <h1>Destinations</h1>
+      </div>
+    </header>
+    <!--end header-->
+
+    <div id="content">
+      <!-- begin intro -->
+      <div class="intro">
+        <p>Here you can find the latest posts about new and interesting destinations in the World.</p>
+      </div>
+      <!--end intro-->
+
+      <!--end banner-->
+
+      <!--begin aside-->
+      <aside role="complementary">
+        <ul>
+          <li><a href="#">Argentina</a></li>
+          <li><a href="#">Brazil</a></li>
+          <li><a href="#">Croatia</a></li>
+          <li><a href="#">Cyprus</a></li>
+          <li><a href="#">Denmark</a></li>
+          <li><a href="#">Faroe Islands</a></li>
+          <li><a href="#">Germany</a></li>
+          <li><a href="#">Iceland</a></li>
+          <li><a href="#">Indonesia</a></li>
+          <li><a href="#">Montenegro</a></li>
+          <li><a href="#">Poland</a></li>
+          <li><a href="#">Slovenia</a></li>
+          <li><a href="#">Saudi Arabia</a></li>
+          <li><a href="#">Vietnam</a></li>
+        </ul>
+
+      </aside>
+      <!--end aside-->
+
+      <!--begin content-->
+
+      <main>
+        <section class="blogPost">
+          <h2>Germany - Castles, Food and Classical Music</h2>
+          <p>This article was released on <time datetime="2020-05-22">May 22nd, 2020</time>. <mark>Some information
+              might
+              not be relevant due to COVID-19 travel ban.</mark></p>
+          <figure><img class="blogImg" src="images/bavaria.jpg" alt="german city from bird perspective"
+              aria-describedby="fig01">
+            <figcaption id="fig01">Heidelberg, Germany</figcaption>
+          </figure>
+          <article role="article">
+            <p>Curabitur dui dolor, egestas at scelerisque sed, fermentum nec sapien. Orci varius natoque penatibus et
+              magnis
+              dis parturient montes, nascetur ridiculus mus. Phasellus ut libero purus. Nam posuere sed purus vitae
+              iaculis.
+              Nullam ligula enim, dignissim sed pellentesque id, pulvinar fringilla sapien.
+            </p>
+
+            <h3>Video of Bavaria from a Bird's Perspective</h3>
+
+            <video style="width:100%;" controls muted poster="images/thumbnail.png">
+
+              <source src="videos/bavaria.mp4" type="video/mp4">
+
+              <source src="videos/bavaria.ogv" type="video/ogg">
+
+              <source src="videos/bavaria.webm" type="video/webm">
+
+              <object width="320" height="240" type="application/x-shockwave-flash" data="fallback.swf">
+
+                <param name="movie" value="fallback.swf" />
+
+                <param name="flashvars" value="autostart=true&file=videos/bavaria.flv">
+
+              </object>
+
+              Your browser does not support the video element.
+
+            </video>
+
+            <p>
+              Fusce ut ante id tellus ultricies vulputate. Vestibulum eleifend nulla et tellus viverra faucibus. In
+              posuere
+              semper semper.
+            </p>
+
+            <h4>One of the most famous German compositors - Beethoven</h4>
+
+            <audio id="beethoven" controls loop>
+              <source src="audio/beethoven.aac" type="audio/aac">
+
+              <source src="audio/beethoven.ogg" type="audio/ogg">
+
+              <source src="audio/beethoven.mp3" type="audio/mp3">
+
+              Your browser does not support the audio element.
+
+            </audio>
+
+            <div id="audio">
+
+              <button onclick="document.getElementById('beethoven').play()">Play the Audio</button>
+              <button onclick="document.getElementById('beethoven').pause()">Pause the Audio</button>
+              <button onclick="document.getElementById('beethoven').volume+=0.1">Increase Volume</button>
+              <button onclick="document.getElementById('beethoven').volume-=0.1">Decrease Volume</button>
+            </div>
+
+
+            <p>
+              Fusce ut ante id tellus ultricies vulputate. Vestibulum eleifend nulla et tellus viverra faucibus. In
+              posuere
+              semper semper.
+            </p>
+          </article>
+          <address>
+            Written by <a href="mailto:noone@example.com">Website Author</a>.
+          </address>
+          <div class="readMore"><a href="#">Read more</a></div>
+        </section>
+        <hr>
+
+        <section class="blogPost">
+          <h2>A must-try hidden Italian gem for foodies</h2>
+          <p>This article was released on <time datetime="2020-05-22">May 22nd, 2020</time>. <mark>Some information
+              might
+              not be relevant due to COVID-19 travel ban.</mark></p>
+          <figure><img class="blogImg" src="images/italy.jpg" alt="amalfi italy coast" aria-describedby="fig02">
+            <figcaption id="fig02">Amalfi, Italy</figcaption>
+          </figure>
+          <article role="article">
+            <p>Curabitur dui dolor, egestas at scelerisque sed, fermentum nec sapien. Orci varius natoque penatibus et
+              magnis
+              dis parturient montes, nascetur ridiculus mus. Phasellus ut libero purus. Nam posuere sed purus vitae
+              iaculis.
+              Nullam ligula enim, dignissim sed pellentesque id, pulvinar fringilla sapien.
+            </p>
+
+            <figure><img class="blogImg" src="images/food.jpg" alt="pizza and pasta on table" aria-describedby="fig03">
+              <figcaption id="fig03">Ristorante Amalfi</figcaption>
+            </figure>
+
+            <p>
+              Fusce ut ante id tellus ultricies vulputate. Vestibulum eleifend nulla et tellus viverra faucibus. In
+              posuere
+              semper semper.
+            </p>
+
+            <h3>Curious how far away you are from Ristorante Amalfi?</h3>
+
+            <div id="location">
+
+              Your location will be displayed here via the .js code
+
+            </div>
+
+            <div id="distance"></div>
+
+            <div id="map"></div>
+
+            <button type="button" id="watch">Track Movement</button>
+            <button type="button" id="clearWatch">Clear Movement</button>
+
+            <p>Nulla ac nisi ultricies, rhoncus sapien ut, tempor risus. Suspendisse eget purus eget elit euismod
+              efficitur eget eget quam. Curabitur finibus lacus nec justo blandit, eu fermentum nisl dictum. Vestibulum
+              vulputate sed felis quis varius. Nulla volutpat id erat at bibendum. Fusce auctor nisi nunc, quis
+              fermentum quam tincidunt nec. Vestibulum mattis quis nisl a porta. Morbi convallis ultricies nulla vitae
+              convallis. In odio nisi, laoreet vitae sem sit amet, efficitur tincidunt est. Donec at malesuada ante,
+              vitae elementum risus. Suspendisse erat velit, imperdiet in urna in, bibendum lacinia quam.</p>
+
+          </article>
+          <address>
+            Written by <a href="mailto:noone@example.com">Website Author</a>.
+          </address>
+          <div class="readMore"><a href="#">Read more</a></div>
+        </section>
+      </main>
+    </div>
+    <!--end content-->
+
+  </div>
+  <!--end wrapper-->
+
+  <!--begin footer-->
+  <footer role="contentinfo">
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Destinations</a> |
+      <a href="#">Contact</a> |
+    </p>
+
+    <small>&copy; Copyright Petra Stefanec.</small>
+  </footer>
+  <!--end footer-->
+
+</body>
+
+</html>

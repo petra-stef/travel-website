@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="travel webpage unknown destinations">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unknown Places</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
+
+  <script src="dist/html5shiv.js"></script>
+</head>
+
+<body>
+
+  <!--begin wrapper-->
+  <div id="wrapper">
+
+
+    <!--begin header-->
+    <header role="banner">
+
+      <!--begin nav-->
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!--end nav-->
+
+      <div id="header">
+        <h1>Contact Us</h1>
+        <img src="images/arrow.png" alt="arrow pointing down">
+      </div>
+    </header>
+    <!--end header-->
+
+    <!--begin content-->
+    <div id="content">
+      <!--begin aside-->
+      <aside role="complementary">
+        <p>Send us any inquiries you might have and we will try to get back to you soon.</p>
+      </aside>
+      <!--end aside-->
+
+      <!--begin form-->
+      <form role="form" class="contact_form" action="#" method="post" name="contact_form">
+        <h2>Send us a message</h2>
+        <ul class="flex-outer">
+
+          <li>
+            <fieldset>
+              <legend>Title:</legend>
+              <input type="radio" name="title" value="mr" id="mr">
+              <label for="mr">Mr</label>
+              <input type="radio" name="title" value="mrs" id="mrs">
+              <label for="mrs">Mrs</label>
+            </fieldset>
+          </li>
+          
+
+          <li class="inline1">
+            <label for="first_name">First name:</label>
+            <input type="text" id="first_name" autofocus placeholder="First Name" autocomplete="given-name">
+          </li>
+          <li class="inline">
+            <label for="last_name">Last name:</label>
+            <input type="text" id="last_name" placeholder="Last Name" autocomplete="family-name">
+          </li>
+          <li class="inline3">
+            <label for="email">Email:*</label>
+            <input type="email" id="email" placeholder="email1@email.com, email2@email.com" autocomplete="email"
+              multiple required aria-required="true">
+          </li>
+          <li class="inline4">
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" placeholder="555-555-5555" autocomplete="tel"
+              pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Please use format 555-555-5555.">
+          </li>
+
+          <li>
+            <label for="website">Link to your website:</label>
+            <input type="url" id="website" placeholder="website.com" title="Please use format website.com.">
+          </li>
+
+          <li>
+            <label for="date">When do you want to travel?</label>
+            <input type="date" id="date">
+          </li>
+
+          <li>
+            <label for="travel">Where do you want to travel?</label>
+            <select id="travel">
+              <option>Select continent</option>
+              <option>Africa</option>
+              <option>Asia</option>
+              <option>Australia</option>
+              <option>Europe</option>
+              <option>North America</option>
+              <option>South America</option>
+            </select>
+          </li>
+
+          <li><label for="country">Specify which country you want to visit?</label>
+            <input id="country" type="search" list="countries" placeholder="Search for country">
+            <datalist id="countries">
+              <option value="Croatia">
+              <option value="Czech Republic">
+              <option value="Austria">
+              <option value="Switzerland">
+              <option value="Indonesia">
+              <option value="Bolivia">
+              <option value="Peru">
+              <option value="Denmark">
+            </datalist>
+          </li>
+          <li>
+            <label for="message" class="message">Message*:</label>
+            <textarea id="message" name="message" cols="40" rows="6" placeholder="Please type your message here"
+              aria-required="true"></textarea>
+          </li>
+          <li>
+            <ul class="flex-inner">
+              <li class="newsletter">
+                <input type="checkbox" value="newsletter" id="newsletter">
+                <label for="newsletter">I would also like to subscribe to newsletter to receive information about new
+                  posts.</label>
+              </li>
+            </ul>
+          </li>
+          <li class="button">
+            <button>
+              Send message
+            </button>
+          </li>
+        </ul>
+      </form>
+      <!-- end form-->
+
+    </div>
+    <!--end content-->
+
+  </div>
+  <!--end wrapper-->
+
+  <!--begin footer-->
+  <footer role="contentinfo">
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Destinations</a> |
+      <a href="#">Contact</a> |
+    </p>
+
+    <small>&copy; Copyright Petra Stefanec.</small>
+  </footer>
+  <!--end footer-->
+
+
+</body>
+
+</html>
