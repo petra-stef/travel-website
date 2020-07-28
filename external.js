@@ -204,3 +204,25 @@ setInterval(animate, 30);
 // causes function to repeat with time in milliseconds; adjusting this number changes the speed of the animation. Increasing the number to 50 will make it go very slow…!
 
 animate();
+
+function customMenu() {
+  var allMenuItems = document.querySelectorAll(".menu");
+  var myUrl = window.location.href;
+  var foundIt = false;
+
+  for (var i = 0; i < allMenuItems.length; i++) {
+    console.log('myUrl', myUrl)
+    console.log('allMenuItems[i].href', allMenuItems[i].href)
+    var finder = myUrl.indexOf(allMenuItems[i].href);
+    if (finder > -1) {
+      foundIt = true;
+      document.getElementById(allMenuItems[i].id).style.color = "#2E7B9E";
+    }
+    else {
+      allMenuItems[i].style.color = "#000";
+    }
+  }
+  if (foundIt == false) {
+    document.getElementById("form").style.color = "#2E7B9E";
+  }
+}
