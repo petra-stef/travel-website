@@ -3,9 +3,9 @@ var ctx = cnv.getContext('2d');
 
 var pict = new Image();
 pict.src = " images/bg1.png";
-pict.onload = function() {         
-  ctx.drawImage(pict, 10, 10);      
-}     
+pict.onload = function () {
+  ctx.drawImage(pict, 10, 10);
+}
 
 ctx.save();
 ctx.beginPath();
@@ -184,14 +184,14 @@ function animate() {
   ctx2.strokeText('Destination does not exist.', 40, 110);
   ctx2.closePath();
 
-  if (x >= (w-20) || x <= 20) { // checks ball position from left/right edges
+  if (x >= (w - 20) || x <= 20) { // checks ball position from left/right edges
     change = -change
     // executed if condition is true, change switched to reverse direction of ball.           
   }
 
   x = x + change; // updates horizontal position of ball
 
-  if (y >= (h-20) || y <= 20) {
+  if (y >= (h - 20) || y <= 20) {
     otherchange = -otherchange;
   }
 
@@ -206,23 +206,36 @@ setInterval(animate, 30);
 animate();
 
 function customMenu() {
-  var allMenuItems = document.querySelectorAll(".menu");
-  var myUrl = window.location.href;
-  var foundIt = false;
+  // var allMenuItems = document.querySelectorAll(".menu");
+  // var myUrl = window.location.href;
+  // var foundIt = false;
 
-  for (var i = 0; i < allMenuItems.length; i++) {
-    console.log('myUrl', myUrl)
-    console.log('allMenuItems[i].href', allMenuItems[i].href)
-    var finder = myUrl.indexOf(allMenuItems[i].href);
-    if (finder > -1) {
-      foundIt = true;
-      document.getElementById(allMenuItems[i].id).style.color = "#2E7B9E";
+  // for (var i = 0; i < allMenuItems.length; i++) {
+  //   console.log('myUrl', myUrl)
+  //   console.log('allMenuItems[i].href', allMenuItems[i].href)
+  //   var finder = myUrl.indexOf(allMenuItems[i].href);
+  //   if (finder > -1) {
+  //     foundIt = true;
+  //     document.getElementById(allMenuItems[i].id).style.color = "#2E7B9E";
+  //   }
+  //   else {
+  //     allMenuItems[i].style.color = "#000";
+  //   }
+  // }
+  // if (foundIt == false) {
+  //   document.getElementById("form").style.color = "#2E7B9E";
+  // }
+  var btnContainer = document.getElementsByClassName("navbar");
+  // Get all buttons with class="menu" inside the container
+  var btns = btnContainer[0].getElementsByClassName("menu");
+  // Loop through the buttons and add the active class to the current/clicked button
+  const pagefile = window.location.pathname
+  let target = -1
+  for (var i = 0; i < btns.length; i++) {
+    if (pagefile == btns[i].pathname) {
+      btns[i].style.color = "#2E7B9E";
+    } else if (pagefile.endsWith("/")) {
+      btns[0].style.color = "#2E7B9E";
     }
-    else {
-      allMenuItems[i].style.color = "#000";
-    }
-  }
-  if (foundIt == false) {
-    document.getElementById("form").style.color = "#2E7B9E";
   }
 }
