@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&family=Reenie+Beanie&display=swap"
     rel="stylesheet">
 
+  <script src="dist/html5shiv.js"></script>
+  <script src="external.js"></script>
 </head>
 
 <body>
@@ -42,7 +44,8 @@
 
     <!-- begin intro -->
     <div class="intro">
-      <p>Drag image that seems most appealing to you into the blue box below to reveal your ideal travel destination!</p>
+      <p>Drag image that seems most appealing to you into the blue box below to reveal your ideal travel destination!
+      </p>
     </div>
     <!--end intro-->
 
@@ -87,7 +90,7 @@
     dropBox.ondrop = function (event) {
       const currentData = event.dataTransfer.getData('Text');
       let result = "";
-      if (currentData.includes("Iceland")){
+      if (currentData.includes("Iceland")) {
         result = "You are a nature lover. For some healing away from the crowds you should discover the natural beauty of "
       } else if (currentData.includes("Korea")) {
         result = "You love modern architecture and getting lost exploring new cities. You should wander through the streets of Seoul in "
@@ -96,7 +99,7 @@
       } else if (currentData.includes("Malaysia")) {
         result = "You want to discover new places that are completely different from your backyard and participate in the local culture. You should backpack through "
       }
-      
+
       this.innerHTML = '<p> ' + result + ' ' + event.dataTransfer.getData('Text') + '</p>';
       event.cancelBubble = true;
       return false;
